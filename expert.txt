@@ -1,0 +1,23 @@
+problem_dict = {
+    "Printer not working": "Check if printer is turned on and connected properly.",
+    "Can't log in": "Check your username and password.",
+    "Software not installing": "Check system requirements.",
+    "Internet not working": "Restart router or modem.",
+    "Email not sending": "Check email server settings."
+}
+
+def handle_request(user_input):
+    if user_input.lower() == "exit":
+        return "Goodbye!"
+    elif user_input in problem_dict:
+        return problem_dict[user_input]
+    else:
+        return "Sorry, I don't know the solution."
+
+while True:
+    user_input = input("Enter your problem (type 'exit' to quit): ")
+    response = handle_request(user_input)
+    print(response)
+
+    if user_input.lower() == "exit":
+        break

@@ -1,0 +1,51 @@
+def greet(bot_name, birth_year):
+    print("Hello! My name is", bot_name)
+    print("I was created in", birth_year)
+
+def remind_name():
+    print("Please, remind me your name.")
+    name = input()
+    print("Nice to meet you,", name)
+
+def guess_age():
+    print("Let me guess your age.")
+    print("Enter remainder of your age when divided by 3, 5 and 7:")
+
+    rem3 = int(input())
+    rem5 = int(input())
+    rem7 = int(input())
+
+    age = (rem3 * 70 + rem5 * 21 + rem7 * 15) % 105
+    print("Your age is", age)
+
+def count():
+    print("Tell me a number.")
+    num = int(input())
+
+    for i in range(num + 1):
+        print(i)
+
+def test():
+    print("Let's test your programming knowledge.")
+    print("Why do we use methods?")
+    print("1. To repeat a statement multiple times")
+    print("2. To divide program into smaller parts")
+    print("3. To stop program execution")
+    print("4. To check execution time")
+
+    answer = 2
+    guess = int(input())
+
+    while guess != answer:
+        print("Try again.")
+        guess = int(input())
+
+def end():
+    print("Congratulations, have a nice day!")
+
+greet("AI-Bot", "2025")
+remind_name()
+guess_age()
+count()
+test()
+end()
