@@ -1,0 +1,18 @@
+public class StudentApp {
+
+    public static void createStudent() {
+
+        Account acc = new Account();
+
+        acc.Name = 'Student Portal';
+        acc.Phone = '9876543210';
+        acc.Website = 'www.studentapp.com';
+
+        insert acc;
+
+        System.debug('Application record created successfully');
+    }
+}
+
+..
+StudentApp.createStudent();
