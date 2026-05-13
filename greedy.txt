@@ -44,62 +44,24 @@ prim(graph, 'A')
 
 --------
 
-def find(parent, i):
-
-    if parent[i] == i:
-
-        return i
-
-    return find(parent, parent[i])
-
-def union(parent, x, y):
-
-    parent[x] = y
-
-def kruskal(vertices, edges):
-
-    edges = sorted(edges, key=lambda item: item[2])
-
-    parent = []
-
-    mst = []
-
-    for node in range(vertices):
-
-        parent.append(node)
-
-    for u, v, w in edges:
-
-        x = find(parent, u)
-
-        y = find(parent, v)
-
-        if x != y:
-
-            mst.append((u, v, w))
-
-            union(parent, x, y)
-
-    print("Minimum Spanning Tree:")
-
-    for u, v, weight in mst:
-
-        print(u, "-", v, ":", weight)
-
-vertices = 4
-
 edges = [
-
-    (0, 1, 10),
-
-    (0, 2, 6),
-
+    (2, 3, 4),
     (0, 3, 5),
-
-    (1, 3, 15),
-
-    (2, 3, 4)
-
+    (0, 2, 6),
+    (0, 1, 10),
+    (1, 3, 15)
 ]
 
-kruskal(vertices, edges)
+visited = []
+total_cost = 0
+
+print("Edges in Minimum Spanning Tree:")
+
+for u, v, weight in edges:
+    if u not in visited or v not in visited:
+        print(u, "-", v, ":", weight)
+        total_cost += weight
+        visited.append(u)
+        visited.append(v)
+
+print("Total Cost =", total_cost)
